@@ -3,27 +3,25 @@
 ## Database
 
 ```
-initdb -D ~/.pgdata/var/lib/postgresql/data
+# Initialize and start the database
 
-docker compose up
+# Start the database in one terminal tab
+bin/start-database.sh
 
-psql -h localhost -p 5431 -U postgres
-
-postgres=# create database task_board;
-
-psql -h localhost -p 5431 -U postgres -d task_board
+# In a different terminal tab run
+bin/create-database.sh
 ```
 
 ## Server
 
 ```
-cd server
-npm start
+# Start the server
+bin/start-server.sh
 ```
 
 ## Client
 
 ```
-cd client
-npm run start
+# Start the client
+bin/start-client.sh
 ```
