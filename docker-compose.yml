@@ -1,16 +1,19 @@
 services:
   db:
     image: postgres
+    container_name: task-board.db
     restart: always
     ports:
       - 5431:5432
     environment:
       POSTGRES_PASSWORD: example
+    env_file: ".env"
     volumes:
-      - pgdata:~/.pgdata/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
  
   adminer:
     image: adminer
+    container_name: task-board.adminer
     restart: always
     ports:
       - 8080:8080
